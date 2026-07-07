@@ -15,7 +15,7 @@ export async function connectDB() {
     console.log('MongoDB connected successfully');
   } catch (error) {
     console.error('MongoDB connection error:', error.message);
-    process.exit(1);
+    console.warn('Server will continue without database connection');
   }
 
   mongoose.connection.on('error', (err) => {
